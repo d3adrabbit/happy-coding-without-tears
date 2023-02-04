@@ -6,3 +6,15 @@
   background: black;
   color: white;
 }
+
+.text-stroke {
+  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-width: 1px;
+}
+
+@media (min-width: 768px) {
+  .text-stroke {
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 2px;
+  }
+}

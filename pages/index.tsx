@@ -1,13 +1,13 @@
 import Image from "next/image";
 import { FaceSmileIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
 import { gsap } from "gsap";
-import { useLayoutEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { horizontalLoop } from "../utils/loop";
 
 export default function HappyCodingWithoutTears() {
   const documentRef = useRef<HTMLDivElement>(null);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const ctx = gsap.context(() => {
       horizontalLoop("[data-loop-text]", {
         repeat: -1,
@@ -26,9 +26,10 @@ export default function HappyCodingWithoutTears() {
 
   return (
     <div className="h-screen mx-auto font-mono bg-white" ref={documentRef}>
-      <div className="container flex items-center mx-auto h-14">
-        <span className="mr-20 text-2xl font-bold">DEADRABBIT</span>
-        <ul className="flex">
+      <div className="flex mx-5 items-center mx-auto h-14">
+        <span className=" text-xl font-bold md:2xl">DEADRABBIT</span>
+
+        <ul className="hidden md:flex">
           <li className="mx-5">HOME</li>
           <li className="mx-5">WORKS</li>
           <li className="mx-5">ABOUT</li>
@@ -39,13 +40,13 @@ export default function HappyCodingWithoutTears() {
         </button>
       </div>
 
-      <div className="flex items-center justify-around px-5 font-serif font-black leading-tight border border-black text-8xl">
-        <div className="">
+      <div className="flex items-center py-5 justify-around px-5 font-serif font-black leading-tight border-t border-b border-black text-3xl md:text-6xl lg:text-8xl 2xl:leading-relaxed">
+        <div className="flex-1">
           <h1>Happy Coding</h1>
           <h1>Without Tears</h1>
         </div>
 
-        <div className="">
+        <div className="flex-1 flex justify-center">
           <Image
             src="/happy-coding/surfing.svg"
             alt="a man is surfing"
@@ -55,9 +56,9 @@ export default function HappyCodingWithoutTears() {
         </div>
       </div>
 
-      <div className="grid grid-cols-3 gap-[1px] border-x border-b border-black bg-black ">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-[1px]  border-b border-black bg-black ">
         <div className="relative p-5 overflow-hidden bg-white">
-          <div className="text-2xl w-[300px] leading-7">
+          <div className="text-lg md:text-2xl w-[200px] md:w-[300px] leading-7">
             Create your own website with best practices.
           </div>
           <div>
@@ -66,9 +67,9 @@ export default function HappyCodingWithoutTears() {
               <span className="text-xs">per year</span>
             </div>
 
-            <button className="px-4 py-3 mt-5 ml-auto text-xl font-light text-white bg-black rounded-xl ">
+            <button className="px-4 py-3 mt-5 ml-auto  font-light text-white bg-black rounded-xl">
               <div className="flex items-center">
-                <span>Talk Right Now</span>
+                <span className="text-sm md:text-xl">Talk Right Now</span>
                 <ArrowRightIcon className="w-5 h-5 ml-5"></ArrowRightIcon>
               </div>
             </button>
@@ -91,11 +92,11 @@ export default function HappyCodingWithoutTears() {
           <div>DeadRabbbbit@Gmail.com</div>
 
           <div className="absolute bottom-3">
-            <div className="text">[Fake Number]</div>
+            <div className="text-lg md:text-2xl">[Fake Number]</div>
             <div className="text-5xl"> +00 8888-888</div>
           </div>
 
-          <div className="absolute -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2">
+          <div className="">
             <FaceSmileIcon className="w-48 h-48 opacity-10"></FaceSmileIcon>
           </div>
         </div>
@@ -109,17 +110,11 @@ export default function HappyCodingWithoutTears() {
         </div>
       </div>
 
-      <div className="flex w-full mt-5 overflow-hidden font-mono text-6xl font-bold whitespace-nowrap">
+      <div className="flex w-full py-2 2xl:p-10 overflow-hidden font-mono  text-2xl 2xl:text-8xl  md:text-6xl font-bold whitespace-nowrap">
         {new Array(6).fill(0).map((_, index) => {
           return (
             <div key={index} data-loop-text>
-              <span
-                style={{
-                  WebkitTextStrokeColor: "black",
-                  WebkitTextStrokeWidth: "2px",
-                  color: "#fff",
-                }}
-              >
+              <span className="text-stroke text-white">
                 DEADRABBIT <span className="mx-5"></span>
               </span>
             </div>
